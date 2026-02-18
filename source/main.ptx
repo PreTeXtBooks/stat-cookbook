@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+
+  <docinfo>
+    <macros>
+      % Probability and Statistics macros
+      % These will be populated from probstat.tex
+    </macros>
+    <latex-image-preamble>
+      \usepackage{tikz}
+      \usepackage{amsmath,amssymb}
+    </latex-image-preamble>
+    <brandlogo url="http://statistics.zone" source="" />
+  </docinfo>
+
+  <book xml:id="stat-cookbook">
+    <title>Probability and Statistics Cookbook</title>
+    <subtitle>A Comprehensive Mathematical Reference</subtitle>
+
+    <frontmatter xml:id="frontmatter">
+      <titlepage>
+        <author>
+          <personname>Matthias Vallentin</personname>
+          <email>matthias@berkeley.edu</email>
+        </author>
+        <date><today /></date>
+      </titlepage>
+
+      <colophon>
+        <edition>Version 0.2.7</edition>
+        <website>
+          <url href="http://statistics.zone">http://statistics.zone</url>
+        </website>
+        <copyright>
+          <year>2017</year>
+          <holder>Matthias Vallentin</holder>
+          <minilicense>CC BY-NC-SA 4.0 License</minilicense>
+          <shortlicense>
+            This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+            To view a copy of this license, visit
+            <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">http://creativecommons.org/licenses/by-nc-sa/4.0/</url>.
+          </shortlicense>
+        </copyright>
+      </colophon>
+
+      <preface>
+        <p>
+          This cookbook integrates various topics in probability theory and statistics.
+          It provides a succinct representation of various topics, offering a comprehensive
+          mathematical reference reduced to its essence, rather than aiming for elaborate explanations.
+        </p>
+        <p>
+          The content is based on literature and in-class material from courses of the
+          statistics department at the University of California in Berkeley.
+        </p>
+        <p>
+          If you find errors or have suggestions for improvements, please visit
+          <url href="http://statistics.zone">http://statistics.zone</url>.
+        </p>
+      </preface>
+    </frontmatter>
+
+    <chapter xml:id="ch-distribution-overview">
+      <title>Distribution Overview</title>
+      <introduction>
+        <p>
+          This chapter provides an overview of common probability distributions,
+          both discrete and continuous.
+        </p>
+      </introduction>
+      
+      <section xml:id="sec-discrete-distributions">
+        <title>Discrete Distributions</title>
+        <p>Content to be added.</p>
+      </section>
+
+      <section xml:id="sec-continuous-distributions">
+        <title>Continuous Distributions</title>
+        <p>Content to be added.</p>
+      </section>
+    </chapter>
+
+    <chapter xml:id="ch-probability-theory">
+      <title>Probability Theory</title>
+      <introduction>
+        <p>
+          This chapter covers fundamental concepts in probability theory.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-random-variables">
+      <title>Random Variables</title>
+      <introduction>
+        <p>
+          This chapter discusses random variables and their properties.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-expectation">
+      <title>Expectation</title>
+      <introduction>
+        <p>
+          This chapter covers expected values and their properties.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-variance">
+      <title>Variance</title>
+      <introduction>
+        <p>
+          This chapter discusses variance and standard deviation.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-inequalities">
+      <title>Inequalities</title>
+      <introduction>
+        <p>
+          This chapter presents important probability inequalities.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-distribution-relationships">
+      <title>Distribution Relationships</title>
+      <introduction>
+        <p>
+          This chapter explores relationships between different probability distributions.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-generating-functions">
+      <title>Probability and Moment Generating Functions</title>
+      <introduction>
+        <p>
+          This chapter covers generating functions for probability distributions.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-multivariate-distributions">
+      <title>Multivariate Distributions</title>
+      <introduction>
+        <p>
+          This chapter discusses multivariate probability distributions.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-convergence">
+      <title>Convergence</title>
+      <introduction>
+        <p>
+          This chapter covers different modes of convergence in probability theory.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-statistical-inference">
+      <title>Statistical Inference</title>
+      <introduction>
+        <p>
+          This chapter introduces statistical inference concepts.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-parametric-inference">
+      <title>Parametric Inference</title>
+      <introduction>
+        <p>
+          This chapter covers parametric statistical inference methods.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-hypothesis-testing">
+      <title>Hypothesis Testing</title>
+      <introduction>
+        <p>
+          This chapter discusses hypothesis testing procedures.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-exponential-family">
+      <title>Exponential Family</title>
+      <introduction>
+        <p>
+          This chapter covers the exponential family of distributions.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-bayesian-inference">
+      <title>Bayesian Inference</title>
+      <introduction>
+        <p>
+          This chapter introduces Bayesian inference methods.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-sampling-methods">
+      <title>Sampling Methods</title>
+      <introduction>
+        <p>
+          This chapter covers various sampling techniques.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-decision-theory">
+      <title>Decision Theory</title>
+      <introduction>
+        <p>
+          This chapter discusses statistical decision theory.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-linear-regression">
+      <title>Linear Regression</title>
+      <introduction>
+        <p>
+          This chapter covers linear regression models.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-nonparametric-estimation">
+      <title>Non-parametric Function Estimation</title>
+      <introduction>
+        <p>
+          This chapter discusses non-parametric estimation methods.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-stochastic-processes">
+      <title>Stochastic Processes</title>
+      <introduction>
+        <p>
+          This chapter introduces stochastic processes.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-time-series">
+      <title>Time Series</title>
+      <introduction>
+        <p>
+          This chapter covers time series analysis.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <chapter xml:id="ch-math">
+      <title>Math</title>
+      <introduction>
+        <p>
+          This chapter provides mathematical background and reference material.
+        </p>
+      </introduction>
+      <p>Content to be added.</p>
+    </chapter>
+
+    <backmatter xml:id="backmatter">
+      <title>Back Matter</title>
+
+      <references>
+        <title>References</title>
+        <biblio type="raw" xml:id="biblio-hoel72">
+          Hoel, P. G., Port, S. C., and Stone, C. J. (1972). Introduction to Probability Theory.
+        </biblio>
+        <biblio type="raw" xml:id="biblio-wasserman03">
+          Wasserman, L. (2003). All of Statistics: A Concise Course in Statistical Inference.
+        </biblio>
+        <biblio type="raw" xml:id="biblio-shumway06">
+          Shumway, R. H. and Stoffer, D. S. (2006). Time Series Analysis and Its Applications.
+        </biblio>
+      </references>
+
+      <index>
+        <title>Index</title>
+        <index-list />
+      </index>
+    </backmatter>
+
+  </book>
+
+</pretext>

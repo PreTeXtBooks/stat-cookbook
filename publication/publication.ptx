@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<publication>
+  <common>
+    <!-- Set base URL for online version -->
+    <baseurl href="https://pretextbooks.github.io/stat-cookbook/"/>
+    
+    <!-- Include table of contents in sidebars -->
+    <tableofcontents level="2"/>
+    
+    <!-- The next elements say how the content will be chunked. -->
+    <chunking level="2"/>
+  </common>
+
+  <!-- Settings for HTML output -->
+  <html>
+    <!-- Set platform (options: web, runestone) -->
+    <platform host="web"/>
+    
+    <!-- Options for navigation -->
+    <navigation logic="linear"/>
+    
+    <!-- Options for calculator -->
+    <calculator model="none"/>
+    
+    <!-- Options for cross-references -->
+    <cross-references text="type-global"/>
+  </html>
+
+  <!-- Specify directories for generated assets -->
+  <source>
+    <directories external="../assets" generated="../generated-assets"/>
+  </source>
+
+  <!-- Settings for LaTeX/PDF output -->
+  <latex>
+    <page>
+      <geometry>margin=1in</geometry>
+    </page>
+    <!-- Print in black and white -->
+    <print>no</print>
+  </latex>
+</publication>
