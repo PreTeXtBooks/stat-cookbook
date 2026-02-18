@@ -13,3 +13,10 @@
 figs/*
 !figs/relationships.pdf
 stat-cookbook.pdf
+
+# PreTeXt build artifacts
+output/
+generated-assets/
+assets/
+.ptx/
+__pycache__/
