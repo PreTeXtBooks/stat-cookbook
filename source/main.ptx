@@ -443,12 +443,95 @@
 
     <chapter xml:id="ch-random-variables">
       <title>Random Variables</title>
+
       <introduction>
         <p>
-          This chapter discusses random variables and their properties.
+          <term>Random Variable (RV)</term>
+          <me>X: \Omega \to \R</me>
+        </p>
+
+        <p>
+          <term>Probability Mass Function (PMF)</term>
+          <me>f_X(x) = \Pr{X = x} = \Pr{\{\omega\in\Omega:X(\omega) = x\}}</me>
+        </p>
+
+        <p>
+          <term>Probability Density Function (PDF)</term>
+          <me>\Pr{a \le X \le b} = \int_a^b f(x)\dx</me>
+        </p>
+
+        <p>
+          <term>Cumulative Distribution Function (CDF)</term>
+          <me>F_X:\R \to [0,1] \qquad F_X(x) = \Pr{X \le x}</me>
+        </p>
+
+        <p>
+          <ol>
+            <li>Nondecreasing: <m>x_1 &lt; x_2 \imp F(x_1) \le F(x_2)</m></li>
+            <li>Normalized: <m>\lim_{x\to -\infty} = 0</m> and <m>\lim_{x\to \infty} = 1</m></li>
+            <li>Right-Continuous: <m>\lim_{y\downarrow x} F(y) = F(x)</m></li>
+          </ol>
+        </p>
+
+        <p>
+          <me>\Pr{a\le Y\le b \giv X=x} = \int_a^b f_{Y|X}(y\giv x) dy \qquad a \le b</me>
+          <me>f_{Y|X}(y\giv x) = \frac{f(x,y)}{f_X(x)}</me>
+        </p>
+
+        <p>
+          <term>Independence</term>
+          <ol>
+            <li><m>\Pr{X \le x, Y \le y} = \Pr{X \le x}\Pr{Y \le y}</m></li>
+            <li><m>f_{X,Y}(x,y) = f_X(x)f_Y(y)</m></li>
+          </ol>
         </p>
       </introduction>
-      <p>Content to be added.</p>
+
+      <section xml:id="sec-transformations">
+        <title>Transformations</title>
+
+        <p>
+          <term>Transformation function</term>
+          <me>Z = \transform(X)</me>
+        </p>
+
+        <p>
+          <term>Discrete</term>
+          <md>
+            <mrow>f_Z(z) \amp= \Pr{\transform(X) = z} = \Pr{\{x:\transform(x) = z\}}</mrow>
+            <mrow>\amp= \Pr{X \in \transform^{-1}(z)} = \sum_{x \in \transform^{-1}(z)} \!\!\!f_X(x)</mrow>
+          </md>
+        </p>
+
+        <p>
+          <term>Continuous</term>
+          <me>F_Z(z) = \Pr{\transform(X) \le z} = \int_{A_z} f(x) \dx \quad \text{with } A_z = \{x:\transform(x) \le z\}</me>
+        </p>
+
+        <p>
+          <term>Special case if <m>\transform</m> strictly monotone</term>
+          <md>
+            <mrow>f_Z(z) \amp= f_X(\transform^{-1}(z)) \left|\frac{d}{dz}\transform^{-1}(z)\right|</mrow>
+            <mrow>\amp= f_X(x)\left|\frac{dx}{dz}\right|</mrow>
+            <mrow>\amp= f_X(x)\frac{1}{|J|}</mrow>
+          </md>
+        </p>
+
+        <p>
+          <term>The Rule of the Lazy Statistician</term>
+          <me>\E{Z} = \int \transform(x) \dfx</me>
+          <me>\E{I_A(x)} = \int I_A(x) \dfx = \int_A \dfx = \Pr{X \in A}</me>
+        </p>
+
+        <p>
+          <term>Convolution</term>
+          <ul>
+            <li><m>Z:=X+Y \qquad f_Z(z)=\displaystyle\int_{-\infty}^{\infty} f_{X,Y}(x,z-x)\,dx \;\stackrel{X,Y \ge 0}{=}\; \int_0^z f_{X,Y}(x,z-x)\,dx</m></li>
+            <li><m>Z:=|X-Y| \qquad f_Z(z)=\displaystyle2\int_0^\infty f_{X,Y}(x,z+x)\,dx</m></li>
+            <li><m>Z:=\displaystyle\frac{X}{Y} \qquad f_Z(z)=\displaystyle\int_{-\infty}^{\infty} |y| f_{X,Y}(yz,y)\,dy \;\stackrel{\ind}{=}\; \int_{-\infty}^{\infty} |y| f_X(yz)f_Y(y)\,dy</m></li>
+          </ul>
+        </p>
+      </section>
     </chapter>
 
     <chapter xml:id="ch-expectation">
