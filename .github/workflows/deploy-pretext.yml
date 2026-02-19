@@ -4,19 +4,13 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -34,31 +28,21 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install PreTeXt CLI
+      - name: Install PreTeXt
         run: |
           pip install -r requirements.txt
           pretext --version
 
-      - name: Build PreTeXt book (HTML)
+      - name: Build HTML
         run: |
           pretext build web
 
-      - name: Upload build artifact for review (PR only)
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: pretext-build-pr-${{ github.event.pull_request.number }}
-          path: output/web
-          retention-days: 14
-
-      - name: Upload artifact for GitHub Pages (main branch only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: output/web
 
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     
