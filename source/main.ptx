@@ -489,7 +489,7 @@
               <m>\mathbb{P}[X=Y] = 1 \;\Longrightarrow\; \mathbb{E}[X]=\mathbb{E}[Y]</m>
             </li>
             <li>
-              <m>\mathbb{E}[X] = \displaystyle\sum_{x=1}^\infty \mathbb{P}[X\ge x]</m> <nbsp/> <nbsp/> X discrete
+              <m>\mathbb{E}[X] = \displaystyle\sum_{x=1}^\infty \mathbb{P}[X\ge x]</m> <nbsp/> <nbsp/> <m>\text{X discrete}</m>
             </li>
           </ul>
         </p>
