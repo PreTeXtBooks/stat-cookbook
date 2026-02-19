@@ -453,12 +453,91 @@
 
     <chapter xml:id="ch-expectation">
       <title>Expectation</title>
-      <introduction>
+      
+      <section xml:id="sec-expectation-definition">
+        <title>Definition and Properties</title>
+        
         <p>
-          This chapter covers expected values and their properties.
+          <ul>
+            <li>
+              <m>\mathbb{E}[X] = \mu_X = \displaystyle \int x \,dF_X(x) =
+                \begin{cases}
+                  \displaystyle\sum_x xf_X(x) \amp \text{X discrete} \\
+                  \displaystyle\int xf_X(x)\,dx \amp \text{X continuous}
+                \end{cases}</m>
+            </li>
+            <li>
+              <m>\mathbb{P}[X=c]=1 \;\Longrightarrow\; \mathbb{E}[X] = c</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[cX] = c\,\mathbb{E}[X]</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[X+Y] = \mathbb{E}[X]+\mathbb{E}[Y]</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[XY] = \displaystyle\int_{X,Y} xy f_{X,Y}(x,y)\,dF_X(x)\,dF_Y(y)</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[\varphi(Y)] \neq \varphi(\mathbb{E}[X])</m>
+              (cf. Jensen inequality)
+            </li>
+            <li>
+              <m>\mathbb{P}[X \ge Y] = 1 \;\Longrightarrow\; \mathbb{E}[X]\ge\mathbb{E}[Y]</m>
+            </li>
+            <li>
+              <m>\mathbb{P}[X=Y] = 1 \;\Longrightarrow\; \mathbb{E}[X]=\mathbb{E}[Y]</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[X] = \displaystyle\sum_{x=1}^\infty \mathbb{P}[X\ge x]</m> <nbsp/> <nbsp/> X discrete
+            </li>
+          </ul>
         </p>
-      </introduction>
-      <p>Content to be added.</p>
+      </section>
+      
+      <section xml:id="sec-sample-mean">
+        <title>Sample Mean</title>
+        
+        <p>
+          <me>\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i</me>
+        </p>
+      </section>
+      
+      <section xml:id="sec-conditional-expectation">
+        <title>Conditional Expectation</title>
+        
+        <p>
+          <ul>
+            <li>
+              <m>\mathbb{E}[Y\,|\,X=x] = \displaystyle\int y f(y\,|\,x)\,dy</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[X] = \mathbb{E}[\mathbb{E}[X\,|\,Y]]</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[\varphi(X,Y)\,|\,X=x]
+                = \displaystyle\int_{-\infty}^\infty \varphi(x,y)f_{Y|X}(y\,|\,x)\,dy</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[\varphi(Y,Z)\,|\,X=x] =
+                \displaystyle\int_{-\infty}^\infty\varphi(y,z)
+                f_{(Y,Z)|X}(y,z\,|\,x)\,dy\,dz</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[Y+Z\,|\,X] = \mathbb{E}[Y\,|\,X] + \mathbb{E}[Z\,|\,X]</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[\varphi(X)Y\,|\,X] = \varphi(X)\mathbb{E}[Y\,|\,X]</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[\varphi(X,Y)] = \mathbb{E}_X[\mathbb{E}[\varphi(X,Y)\,|\,X]]</m>
+            </li>
+            <li>
+              <m>\mathbb{E}[Y\,|\,X] = c \;\Longrightarrow\; \mathrm{Cov}[X,Y]=0</m>
+            </li>
+          </ul>
+        </p>
+      </section>
     </chapter>
 
     <chapter xml:id="ch-variance">
