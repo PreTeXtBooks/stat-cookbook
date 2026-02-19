@@ -132,7 +132,7 @@
           <li><m>\mathbb{P}[\neg{A}] = 1 - \mathbb{P}[A]</m></li>
           <li><m>\mathbb{P}[B] = \mathbb{P}[A \cap B] + \mathbb{P}[\neg{A} \cap B]</m></li>
           <li><m>\mathbb{P}[\Omega] = 1 \qquad \mathbb{P}[\varnothing] = 0</m></li>
-          <li><m>\neg{\left(\bigcup_n A_n\right)} = \bigcap_n \neg{A_n} \quad \neg{\left(\bigcap_n A_n\right)} = \bigcup_n \neg{A_n} \qquad</m> <term>DeMorgan</term></li>
+          <li><m>\neg{\left(\bigcup_n A_n\right)} = \bigcap_n \neg{A_n} \quad \neg{\left(\bigcap_n A_n\right)} = \bigcup_n \neg{A_n} \qquad</m> <term>De Morgan</term></li>
           <li><m>\mathbb{P}\left[\bigcup_n A_n\right] = 1 - \mathbb{P}\left[\bigcap_n \neg{A_n}\right]</m></li>
           <li>
             <p><m>\mathbb{P}[A \cup B] = \mathbb{P}[A] + \mathbb{P}[B] - \mathbb{P}[A \cap B]</m></p>
@@ -182,7 +182,7 @@
       <section xml:id="sec-inclusion-exclusion">
         <title>Inclusion-Exclusion Principle</title>
         <p>
-          <me>\biggl|\bigcup_{i=1}^n A_i\biggr| = \sum_{r=1}^n(-1)^{r-1} \sum_{i \le i_1 &lt; \dots &lt; i_r \le n}\biggl|\bigcap_{j=1}^r A_{i_j}\biggr|</me>
+          <me>\biggl|\bigcup_{i=1}^n A_i\biggr| = \sum_{r=1}^n(-1)^{r-1} \sum_{1 \le i_1 &lt; \dots &lt; i_r \le n}\biggl|\bigcap_{j=1}^r A_{i_j}\biggr|</me>
         </p>
       </section>
 
