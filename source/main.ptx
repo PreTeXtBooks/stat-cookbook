@@ -90,7 +90,7 @@
             <row>
               <cell>Uniform</cell>
               <cell><m>\textrm{Unif}\{a,\ldots,b\}</m></cell>
-              <cell><me>\begin{cases} 0 &amp; x &lt; a\\ \frac{\lfloor x\rfloor-a+1}{b-a} &amp; a \le x \le b \\ 1 &amp; x &gt; b\\ \end{cases}</me></cell>
+              <cell><me>\begin{cases} 0 &amp; x &lt; a\\ \frac{\lfloor x\rfloor-a+1}{b-a+1} &amp; a \le x \le b \\ 1 &amp; x &gt; b\\ \end{cases}</me></cell>
               <cell><m>\frac{I(a\le x\le b)}{b-a+1}</m></cell>
               <cell><m>\frac{a+b}{2}</m></cell>
               <cell><m>\frac{(b-a+1)^2-1}{12}</m></cell>
@@ -280,7 +280,7 @@
             </row>
             
             <row>
-              <cell>Exponential<fn>We use the <em>rate</em> parameterization where <m>\beta=\frac{1}{\lambda}</m>. Some textbooks use <m>\beta</m> as <em>scale</em> parameter instead.</fn></cell>
+              <cell>Exponential<fn>We use the <em>scale</em> parameterization where <m>\beta</m> is the mean. Some textbooks use the <em>rate</em> parameterization with <m>\lambda=\frac{1}{\beta}</m> instead.</fn></cell>
               <cell><m>\textrm{Exp}(\beta)</m></cell>
               <cell><m>1-e^{-x/\beta}</m></cell>
               <cell><m>\frac{1}{\beta}e^{-x/\beta}</m></cell>
@@ -290,7 +290,7 @@
             </row>
             
             <row>
-              <cell>Gamma<fn>We use the <em>rate</em> parameterization where <m>\beta=\frac{1}{\lambda}</m>. Some textbooks use <m>\beta</m> as <em>scale</em> parameter instead.</fn></cell>
+              <cell>Gamma<fn>We use the <em>rate</em> parameterization where <m>\beta</m> is the rate parameter. Some textbooks use the <em>scale</em> parameterization with <m>\theta=\frac{1}{\beta}</m> instead.</fn></cell>
               <cell><m>\textrm{Gamma}(\alpha,\beta)</m></cell>
               <cell><m>\frac{\gamma(\alpha,\beta x)}{\Gamma(\alpha)}</m></cell>
               <cell><m>\frac{\beta^{\alpha}}{\Gamma( \alpha )} x^{\alpha-1}e^{-\beta x}</m></cell>
