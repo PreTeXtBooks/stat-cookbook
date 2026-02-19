@@ -83,12 +83,109 @@
 
     <chapter xml:id="ch-probability-theory">
       <title>Probability Theory</title>
+      
       <introduction>
         <p>
           This chapter covers fundamental concepts in probability theory.
         </p>
       </introduction>
-      <p>Content to be added.</p>
+
+      <section xml:id="sec-probability-definitions">
+        <title>Definitions</title>
+        <ul>
+          <li>
+            <p>Sample space <m>\Omega</m></p>
+          </li>
+          <li>
+            <p>Outcome (point or element) <m>\omega \in \Omega</m></p>
+          </li>
+          <li>
+            <p>Event <m>A \subseteq \Omega</m></p>
+          </li>
+          <li>
+            <p><m>\sigma</m>-algebra <m>\mathcal{A}</m></p>
+            <ol>
+              <li><m>\varnothing \in \mathcal{A}</m></li>
+              <li><m>A_1,A_2,\dots, \in \mathcal{A} \Longrightarrow \bigcup_{i=1}^\infty A_i \in \mathcal{A}</m></li>
+              <li><m>A \in \mathcal{A} \Longrightarrow \neg{A} \in \mathcal{A}</m></li>
+            </ol>
+          </li>
+          <li>
+            <p>Probability Distribution <m>\mathbb{P}</m></p>
+            <ol>
+              <li><m>\mathbb{P}[A] \ge 0 \quad \forall A</m></li>
+              <li><m>\mathbb{P}[\Omega] = 1</m></li>
+              <li><m>\mathbb{P}\left[\displaystyle\bigsqcup_{i=1}^\infty A_i\right] = \displaystyle\sum_{i=1}^\infty \mathbb{P}[A_i]</m></li>
+            </ol>
+          </li>
+          <li>
+            <p>Probability space <m>(\Omega,\mathcal{A},\mathbb{P})</m></p>
+          </li>
+        </ul>
+      </section>
+
+      <section xml:id="sec-probability-properties">
+        <title>Properties</title>
+        <ul>
+          <li><m>\mathbb{P}[\varnothing] = 0</m></li>
+          <li><m>B = \Omega \cap B = (A \cup \neg{A}) \cap B = (A \cap B) \cup (\neg{A} \cap B)</m></li>
+          <li><m>\mathbb{P}[\neg{A}] = 1 - \mathbb{P}[A]</m></li>
+          <li><m>\mathbb{P}[B] = \mathbb{P}[A \cap B] + \mathbb{P}[\neg{A} \cap B]</m></li>
+          <li><m>\mathbb{P}[\Omega] = 1 \qquad \mathbb{P}[\varnothing] = 0</m></li>
+          <li><m>\neg{\left(\bigcup_n A_n\right)} = \bigcap_n \neg{A_n} \quad \neg{\left(\bigcap_n A_n\right)} = \bigcup_n \neg{A_n} \qquad</m> <term>De Morgan</term></li>
+          <li><m>\mathbb{P}\left[\bigcup_n A_n\right] = 1 - \mathbb{P}\left[\bigcap_n \neg{A_n}\right]</m></li>
+          <li>
+            <p><m>\mathbb{P}[A \cup B] = \mathbb{P}[A] + \mathbb{P}[B] - \mathbb{P}[A \cap B]</m></p>
+            <p><m>\Longrightarrow \mathbb{P}[A \cup B] \le \mathbb{P}[A] + \mathbb{P}[B]</m></p>
+          </li>
+          <li><m>\mathbb{P}[A \cup B] = \mathbb{P}[A \cap \neg{B}] + \mathbb{P}[\neg{A} \cap B] + \mathbb{P}[A \cap B]</m></li>
+          <li><m>\mathbb{P}[A \cap \neg{B}] = \mathbb{P}[A] - \mathbb{P}[A \cap B]</m></li>
+        </ul>
+      </section>
+
+      <section xml:id="sec-probability-continuity">
+        <title>Continuity of Probabilities</title>
+        <ul>
+          <li><m>A_1 \subset A_2 \subset \dots \Longrightarrow \lim_{n\to\infty} \mathbb{P}[A_n] = \mathbb{P}[A] \quad\text{where } A = \bigcup_{i=1}^\infty A_i</m></li>
+          <li><m>A_1 \supset A_2 \supset \dots \Longrightarrow \lim_{n\to\infty} \mathbb{P}[A_n] = \mathbb{P}[A] \quad\text{where } A = \bigcap_{i=1}^\infty A_i</m></li>
+        </ul>
+      </section>
+
+      <section xml:id="sec-probability-independence">
+        <title>Independence</title>
+        <p>
+          <me>A \perp\!\!\!\perp B \Longleftrightarrow \mathbb{P}[A \cap B] = \mathbb{P}[A]\mathbb{P}[B]</me>
+        </p>
+      </section>
+
+      <section xml:id="sec-conditional-probability">
+        <title>Conditional Probability</title>
+        <p>
+          <me>\mathbb{P}[A \,|\, B] = \frac{\mathbb{P}[A \cap B]}{\mathbb{P}[B]} \qquad \mathbb{P}[B] > 0</me>
+        </p>
+      </section>
+
+      <section xml:id="sec-law-total-probability">
+        <title>Law of Total Probability</title>
+        <p>
+          <me>\mathbb{P}[B] = \sum_{i=1}^n \mathbb{P}[B|A_i]\mathbb{P}[A_i] \qquad \Omega = \bigsqcup_{i=1}^n A_i</me>
+        </p>
+      </section>
+
+      <section xml:id="sec-bayes-theorem">
+        <title>Bayes' Theorem</title>
+        <p>
+          <me>\mathbb{P}[A_i \,|\, B] = \frac{\mathbb{P}[B \,|\, A_i]\mathbb{P}[A_i]}{\sum_{j=1}^n \mathbb{P}[B \,|\, A_j]\mathbb{P}[A_j]} \qquad \Omega = \bigsqcup_{i=1}^n A_i</me>
+        </p>
+      </section>
+
+      <section xml:id="sec-inclusion-exclusion">
+        <title>Inclusion-Exclusion Principle</title>
+        <p>
+          <me>\biggl|\bigcup_{i=1}^n A_i\biggr| = \sum_{r=1}^n(-1)^{r-1} \sum_{1 \le i_1 &lt; \dots &lt; i_r \le n}\biggl|\bigcap_{j=1}^r A_{i_j}\biggr|</me>
+        </p>
+      </section>
+
     </chapter>
 
     <chapter xml:id="ch-random-variables">
