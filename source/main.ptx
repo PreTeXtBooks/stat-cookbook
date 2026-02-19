@@ -63,21 +63,325 @@
 
     <chapter xml:id="ch-distribution-overview">
       <title>Distribution Overview</title>
-      <introduction>
-        <p>
-          This chapter provides an overview of common probability distributions,
-          both discrete and continuous.
-        </p>
-      </introduction>
       
       <section xml:id="sec-discrete-distributions">
         <title>Discrete Distributions</title>
-        <p>Content to be added.</p>
+        
+        <table xml:id="table-discrete-distributions">
+          <title>Common Discrete Distributions</title>
+          <tabular halign="center">
+            <col width="15%"/>
+            <col width="15%"/>
+            <col width="15%"/>
+            <col width="15%"/>
+            <col width="10%"/>
+            <col width="10%"/>
+            <col width="20%"/>
+            <row header="yes" bottom="major">
+              <cell></cell>
+              <cell>Notation<fn>We use the notation <m>\gamma(s,x)</m> and <m>\Gamma(x)</m> to refer to the Gamma functions, and use <m>\mathrm{B}(x,y)</m> and <m>I_x</m> to refer to the Beta functions.</fn></cell>
+              <cell><m>F_X(x)</m></cell>
+              <cell><m>f_X(x)</m></cell>
+              <cell><m>\mathbb{E}[X]</m></cell>
+              <cell><m>\mathbb{V}[X]</m></cell>
+              <cell><m>M_X(s)</m></cell>
+            </row>
+            
+            <row>
+              <cell>Uniform</cell>
+              <cell><m>\textrm{Unif}\{a,\ldots,b\}</m></cell>
+              <cell><me>\begin{cases} 0 &amp; x &lt; a\\ \frac{\lfloor x\rfloor-a+1}{b-a} &amp; a \le x \le b \\ 1 &amp; x &gt; b\\ \end{cases}</me></cell>
+              <cell><m>\frac{I(a\le x\le b)}{b-a+1}</m></cell>
+              <cell><m>\frac{a+b}{2}</m></cell>
+              <cell><m>\frac{(b-a+1)^2-1}{12}</m></cell>
+              <cell><m>\frac{e^{as}-e^{-(b+1)s}}{s(b-a)}</m></cell>
+            </row>
+            
+            <row>
+              <cell>Bernoulli</cell>
+              <cell><m>\textrm{Bern}(p)</m></cell>
+              <cell><m>(1-p)^{1-x}</m></cell>
+              <cell><m>p^{x} (1-p)^{1-x}</m></cell>
+              <cell><m>p</m></cell>
+              <cell><m>p(1-p)</m></cell>
+              <cell><m>1-p+pe^s</m></cell>
+            </row>
+            
+            <row>
+              <cell>Binomial</cell>
+              <cell><m>\textrm{Bin}(n,p)</m></cell>
+              <cell><m>I_{1-p}(n-x,x+1)</m></cell>
+              <cell><m>\binom{n}{x}p^x(1-p)^{n-x}</m></cell>
+              <cell><m>np</m></cell>
+              <cell><m>np(1-p)</m></cell>
+              <cell><m>(1-p+pe^s)^n</m></cell>
+            </row>
+            
+            <row>
+              <cell>Multinomial</cell>
+              <cell><m>\textrm{Mult}(n,p)</m></cell>
+              <cell></cell>
+              <cell><me>\frac{n!}{x_1!\ldots x_k!}p_1^{x_1}\cdots p_k^{x_k}</me><m>\sum_{i=1}^k x_i = n</m></cell>
+              <cell><me>\begin{pmatrix} np_1\\ \vdots \\ np_k \end{pmatrix}</me></cell>
+              <cell><me>\begin{pmatrix} np_1(1 - p_1) &amp; - np_1p_2\\ - np_2p_1 &amp; \ddots \end{pmatrix}</me></cell>
+              <cell><m>\left( \sum_{i=0}^k p_i e^{s_i} \right)^n</m></cell>
+            </row>
+            
+            <row>
+              <cell>Hypergeometric</cell>
+              <cell><m>\textrm{Hyp}(N,m,n)</m></cell>
+              <cell><m>\approx \Phi\left(\frac{x-np}{\sqrt{np(1-p)}}\right)</m></cell>
+              <cell><m>\frac{\binom{m}{x}\binom{N-m}{n-x}}{\binom{N}{n}}</m></cell>
+              <cell><m>\frac{nm}{N}</m></cell>
+              <cell><m>\frac{nm(N-n)(N-m)}{N^2(N-1)}</m></cell>
+              <cell></cell>
+            </row>
+            
+            <row>
+              <cell>Negative Binomial</cell>
+              <cell><m>\textrm{NBin}(r,p)</m></cell>
+              <cell><m>I_p(r,x+1)</m></cell>
+              <cell><m>\binom{x+r-1}{r-1}p^r(1-p)^x</m></cell>
+              <cell><m>r\frac{1-p}{p}</m></cell>
+              <cell><m>r\frac{1-p}{p^2}</m></cell>
+              <cell><m>\left(\frac{pe^s}{1-(1-p)e^s}\right)^r</m></cell>
+            </row>
+            
+            <row>
+              <cell>Geometric</cell>
+              <cell><m>\textrm{Geo}(p)</m></cell>
+              <cell><m>1-(1-p)^x</m>, <m>x\in\mathbb{N}^+</m></cell>
+              <cell><m>p(1-p)^{x-1}</m>, <m>x\in\mathbb{N}^+</m></cell>
+              <cell><m>\frac{1}{p}</m></cell>
+              <cell><m>\frac{1-p}{p^2}</m></cell>
+              <cell><m>\frac{pe^s}{1-(1-p)e^s}</m></cell>
+            </row>
+            
+            <row>
+              <cell>Poisson</cell>
+              <cell><m>\textrm{Po}(\lambda)</m></cell>
+              <cell><m>e^{-\lambda}\sum_{i=0}^x\frac{\lambda^i}{i!}</m></cell>
+              <cell><m>\frac{\lambda^x e^{-\lambda}}{x!}</m></cell>
+              <cell><m>\lambda</m></cell>
+              <cell><m>\lambda</m></cell>
+              <cell><m>e^{\lambda(e^s-1)}</m></cell>
+            </row>
+          </tabular>
+        </table>
+        
+        <figure xml:id="fig-discrete-pmf">
+          <caption>Probability Mass Functions (PMF) for Discrete Distributions</caption>
+          <image source="figs/uniform-pmf.pdf" width="45%"/>
+          <image source="figs/binomial-pmf.pdf" width="45%"/>
+          <image source="figs/geometric-pmf.pdf" width="45%"/>
+          <image source="figs/poisson-pmf.pdf" width="45%"/>
+        </figure>
+        
+        <figure xml:id="fig-discrete-cdf">
+          <caption>Cumulative Distribution Functions (CDF) for Discrete Distributions</caption>
+          <image source="figs/uniform-cdf-discrete.pdf" width="45%"/>
+          <image source="figs/binomial-cdf.pdf" width="45%"/>
+          <image source="figs/geometric-cdf.pdf" width="45%"/>
+          <image source="figs/poisson-cdf.pdf" width="45%"/>
+        </figure>
       </section>
 
       <section xml:id="sec-continuous-distributions">
         <title>Continuous Distributions</title>
-        <p>Content to be added.</p>
+        
+        <table xml:id="table-continuous-distributions">
+          <title>Common Continuous Distributions</title>
+          <tabular halign="center">
+            <col width="15%"/>
+            <col width="15%"/>
+            <col width="15%"/>
+            <col width="15%"/>
+            <col width="10%"/>
+            <col width="10%"/>
+            <col width="20%"/>
+            <row header="yes" bottom="major">
+              <cell></cell>
+              <cell>Notation</cell>
+              <cell><m>F_X(x)</m></cell>
+              <cell><m>f_X(x)</m></cell>
+              <cell><m>\mathbb{E}[X]</m></cell>
+              <cell><m>\mathbb{V}[X]</m></cell>
+              <cell><m>M_X(s)</m></cell>
+            </row>
+            
+            <row>
+              <cell>Uniform</cell>
+              <cell><m>\textrm{Unif}(a,b)</m></cell>
+              <cell><me>\begin{cases} 0 &amp; x &lt; a \\ \frac{x-a}{b-a} &amp; a &lt; x &lt; b \\ 1 &amp; x &gt; b\\\end{cases}</me></cell>
+              <cell><m>\frac{I(a&lt; x&lt; b)}{b-a}</m></cell>
+              <cell><m>\frac{a+b}{2}</m></cell>
+              <cell><m>\frac{(b-a)^2}{12}</m></cell>
+              <cell><m>\frac{e^{sb}-e^{sa}}{s(b-a)}</m></cell>
+            </row>
+            
+            <row>
+              <cell>Normal</cell>
+              <cell><m>\mathcal{N}(\mu,\sigma^2)</m></cell>
+              <cell><m>\Phi(x)=\int_{-\infty}^x \phi(t)\,dt</m></cell>
+              <cell><m>\phi(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left\{-\frac{(x-\mu)^2}{2 \sigma^2}\right\}</m></cell>
+              <cell><m>\mu</m></cell>
+              <cell><m>\sigma^2</m></cell>
+              <cell><m>\exp\left\{\mu s + \frac{\sigma^2s^2}{2}\right\}</m></cell>
+            </row>
+            
+            <row>
+              <cell>Log-Normal</cell>
+              <cell><m>\ln\mathcal{N}(\mu,\sigma^2)</m></cell>
+              <cell><m>\frac{1}{2}+\frac{1}{2} \mathrm{erf}\left[\frac{\ln x-\mu}{\sqrt{2\sigma^2}}\right]</m></cell>
+              <cell><m>\frac{1}{x\sqrt{2\pi\sigma^2}} \exp\left\{-\frac{(\ln x - \mu)^2}{2\sigma^2}\right\}</m></cell>
+              <cell><m>e^{\mu+\sigma^2/2}</m></cell>
+              <cell><m>(e^{\sigma^2}-1) e^{2\mu+\sigma^2}</m></cell>
+              <cell></cell>
+            </row>
+            
+            <row>
+              <cell>Multivariate Normal</cell>
+              <cell><m>\mathrm{MVN}(\mu,\Sigma)</m></cell>
+              <cell></cell>
+              <cell><m>(2\pi)^{-k/2} |\Sigma|^{-1/2} e^{-\frac{1}{2}(x-\mu)^T \Sigma^{-1}(x-\mu)}</m></cell>
+              <cell><m>\mu</m></cell>
+              <cell><m>\Sigma</m></cell>
+              <cell><m>\exp\left\{\mu^T s + \frac{1}{2} s^T \Sigma s\right\}</m></cell>
+            </row>
+            
+            <row>
+              <cell>Student's <m>t</m></cell>
+              <cell><m>\text{Student}(\nu)</m></cell>
+              <cell><m>I_x\left( \frac{\nu}{2},\frac{\nu}{2} \right)</m></cell>
+              <cell><m>\frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}\left(1+\frac{x^2}{\nu}\right)^{-(\nu+1)/2}</m></cell>
+              <cell><m>0</m> (<m>\nu  &gt; 1</m>)</cell>
+              <cell><me>\begin{cases}\frac{\nu}{\nu-2} &amp; \nu &gt; 2 \\\infty &amp; 1 &lt; \nu \le 2\end{cases}</me></cell>
+              <cell></cell>
+            </row>
+            
+            <row>
+              <cell>Chi-square</cell>
+              <cell><m>\chi_k^2</m></cell>
+              <cell><m>\frac{1}{\Gamma(k/2)} \gamma\left(\frac{k}{2}, \frac{x}{2}\right)</m></cell>
+              <cell><m>\frac{1}{2^{k/2} \Gamma(k/2)} x^{k/2-1} e^{-x/2}</m></cell>
+              <cell><m>k</m></cell>
+              <cell><m>2k</m></cell>
+              <cell><m>(1-2s)^{-k/2}</m> (<m>s&lt;1/2</m>)</cell>
+            </row>
+            
+            <row>
+              <cell>F</cell>
+              <cell><m>\text{F}(d_1,d_2)</m></cell>
+              <cell><m>I_\frac{d_1x}{d_1x+d_2}\left(\frac{d_1}{2},\frac{d_2}{2}\right)</m></cell>
+              <cell><m>\frac{\sqrt{\frac{(d_1x)^{d_1} d_2^{d_2}}{(d_1x+d_2)^{d_1+d_2}}}}{x\mathrm{B}\left(\frac{d_1}{2},\frac{d_1}{2}\right)}</m></cell>
+              <cell><m>\frac{d_2}{d_2-2}</m></cell>
+              <cell><m>\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)}</m></cell>
+              <cell></cell>
+            </row>
+            
+            <row>
+              <cell>Exponential<fn>We use the <em>rate</em> parameterization where <m>\beta=\frac{1}{\lambda}</m>. Some textbooks use <m>\beta</m> as <em>scale</em> parameter instead.</fn></cell>
+              <cell><m>\textrm{Exp}(\beta)</m></cell>
+              <cell><m>1-e^{-x/\beta}</m></cell>
+              <cell><m>\frac{1}{\beta}e^{-x/\beta}</m></cell>
+              <cell><m>\beta</m></cell>
+              <cell><m>\beta^2</m></cell>
+              <cell><m>\frac{1}{1-\frac{s}{\beta}}</m> (<m>s&lt;\beta</m>)</cell>
+            </row>
+            
+            <row>
+              <cell>Gamma<fn>We use the <em>rate</em> parameterization where <m>\beta=\frac{1}{\lambda}</m>. Some textbooks use <m>\beta</m> as <em>scale</em> parameter instead.</fn></cell>
+              <cell><m>\textrm{Gamma}(\alpha,\beta)</m></cell>
+              <cell><m>\frac{\gamma(\alpha,\beta x)}{\Gamma(\alpha)}</m></cell>
+              <cell><m>\frac{\beta^{\alpha}}{\Gamma( \alpha )} x^{\alpha-1}e^{-\beta x}</m></cell>
+              <cell><m>\frac{\alpha}{\beta}</m></cell>
+              <cell><m>\frac{\alpha}{\beta^2}</m></cell>
+              <cell><m>\left(\frac{1}{1-\frac{s}{\beta}} \right)^\alpha</m> (<m>s&lt;\beta</m>)</cell>
+            </row>
+            
+            <row>
+              <cell>Inverse Gamma</cell>
+              <cell><m>\textrm{InvGamma}(\alpha,\beta)</m></cell>
+              <cell><m>\frac{\Gamma\left(\alpha,\frac{\beta}{x}\right)}{\Gamma(\alpha)}</m></cell>
+              <cell><m>\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{-\alpha-1}e^{-\beta/x}</m></cell>
+              <cell><m>\frac{\beta}{\alpha-1}</m> (<m>\alpha&gt;1</m>)</cell>
+              <cell><m>\frac{\beta^2}{(\alpha-1)^2(\alpha-2)}</m> (<m>\alpha &gt; 2</m>)</cell>
+              <cell><m>\frac{2(-\beta s)^{\alpha/2}}{\Gamma(\alpha)}K_\alpha( \sqrt{-4\beta s} )</m></cell>
+            </row>
+            
+            <row>
+              <cell>Dirichlet</cell>
+              <cell><m>\textrm{Dir}(\alpha)</m></cell>
+              <cell></cell>
+              <cell><m>\frac{\Gamma\left(\sum_{i=1}^k \alpha_i\right)}{\prod_{i=1}^k\Gamma(\alpha_i)}\prod_{i=1}^k x_i^{\alpha_i-1}</m></cell>
+              <cell><m>\frac{\alpha_i}{\sum_{i=1}^k \alpha_i}</m></cell>
+              <cell><m>\frac{\mathbb{E}[X_i](1-\mathbb{E}[X_i])}{\sum_{i=1}^k\alpha_i + 1}</m></cell>
+              <cell></cell>
+            </row>
+            
+            <row>
+              <cell>Beta</cell>
+              <cell><m>\textrm{Beta}(\alpha,\beta)</m></cell>
+              <cell><m>I_x(\alpha,\beta)</m></cell>
+              <cell><m>\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1}</m></cell>
+              <cell><m>\frac{\alpha}{\alpha+\beta}</m></cell>
+              <cell><m>\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}</m></cell>
+              <cell><m>1+\sum_{k=1}^{\infty} \left( \prod_{r=0}^{k-1}\frac{\alpha+r}{\alpha+\beta+r} \right) \frac{s^k}{k!}</m></cell>
+            </row>
+            
+            <row>
+              <cell>Weibull</cell>
+              <cell><m>\mathrm{Weibull}(\lambda, k)</m></cell>
+              <cell><m>1 - e^{-(x/\lambda)^k}</m></cell>
+              <cell><m>\frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1} e^{-(x/\lambda)^k}</m></cell>
+              <cell><m>\lambda \Gamma\left(1 + \frac{1}{k} \right)</m></cell>
+              <cell><m>\lambda^2 \Gamma\left(1 + \frac{2}{k}\right) - \mu^2</m></cell>
+              <cell><m>\sum_{n=0}^\infty \frac{s^n \lambda^n}{n!} \Gamma\left(1+\frac{n}{k}\right)</m></cell>
+            </row>
+            
+            <row>
+              <cell>Pareto</cell>
+              <cell><m>\mathrm{Pareto}(x_m, \alpha)</m></cell>
+              <cell><m>1 - \left(\frac{x_m}{x} \right)^\alpha</m> (<m>x\ge x_m</m>)</cell>
+              <cell><m>\alpha\frac{x_m^\alpha}{x^{\alpha+1}}</m> (<m>x\ge x_m</m>)</cell>
+              <cell><m>\frac{\alpha x_m}{\alpha-1}</m> (<m>\alpha&gt;1</m>)</cell>
+              <cell><m>\frac{x_m^2\alpha}{(\alpha-1)^2(\alpha-2)}</m> (<m>\alpha&gt;2</m>)</cell>
+              <cell><m>\alpha(-x_m s)^\alpha \Gamma(-\alpha,-x_m s)</m> (<m>s&lt;0</m>)</cell>
+            </row>
+          </tabular>
+        </table>
+        
+        <figure xml:id="fig-continuous-pdf">
+          <caption>Probability Density Functions (PDF) for Continuous Distributions</caption>
+          <image source="figs/uniform-pdf.pdf" width="30%"/>
+          <image source="figs/normal-pdf.pdf" width="30%"/>
+          <image source="figs/lognormal-pdf.pdf" width="30%"/>
+          <image source="figs/student-pdf.pdf" width="30%"/>
+          <image source="figs/chisquare-pdf.pdf" width="30%"/>
+          <image source="figs/f-pdf.pdf" width="30%"/>
+          <image source="figs/exponential-pdf.pdf" width="30%"/>
+          <image source="figs/gamma-pdf.pdf" width="30%"/>
+          <image source="figs/invgamma-pdf.pdf" width="30%"/>
+          <image source="figs/beta-pdf.pdf" width="30%"/>
+          <image source="figs/weibull-pdf.pdf" width="30%"/>
+          <image source="figs/pareto-pdf.pdf" width="30%"/>
+        </figure>
+        
+        <figure xml:id="fig-continuous-cdf">
+          <caption>Cumulative Distribution Functions (CDF) for Continuous Distributions</caption>
+          <image source="figs/uniform-cdf-continuous.pdf" width="30%"/>
+          <image source="figs/normal-cdf.pdf" width="30%"/>
+          <image source="figs/lognormal-cdf.pdf" width="30%"/>
+          <image source="figs/student-cdf.pdf" width="30%"/>
+          <image source="figs/chisquare-cdf.pdf" width="30%"/>
+          <image source="figs/f-cdf.pdf" width="30%"/>
+          <image source="figs/exponential-cdf.pdf" width="30%"/>
+          <image source="figs/gamma-cdf.pdf" width="30%"/>
+          <image source="figs/invgamma-cdf.pdf" width="30%"/>
+          <image source="figs/beta-cdf.pdf" width="30%"/>
+          <image source="figs/weibull-cdf.pdf" width="30%"/>
+          <image source="figs/pareto-cdf.pdf" width="30%"/>
+        </figure>
       </section>
     </chapter>
 
