@@ -4,12 +4,58 @@
 
   <docinfo>
     <macros>
-      % Probability and Statistics macros
-      % These will be populated from probstat.tex
+      % Probability and Statistics macros from probstat.tex
+      
+      % Logic
+      \newcommand{\comp}[1]{\neg{#1}}
+      \newcommand{\imp}{\;\Longrightarrow\;}
+      \newcommand{\eqv}{\;\Longleftrightarrow\;}
+      
+      % Numbers
+      \def\C{\mathbb{C}}
+      \def\N{\mathbb{N}}
+      \def\R{\mathbb{R}}
+      \def\Z{\mathbb{Z}}
+      
+      % Limits
+      \newcommand{\limn}[1][\infty]{\lim_{n\to #1}}
+      
+      % Sums and products
+      \newcommand{\sumin}{\sum_{i=1}^n}
+      \newcommand{\sumjn}{\sum_{j=1}^n}
+      \newcommand{\prodin}{\prod_{i=1}^n}
+      
+      % Differentials
+      \renewcommand{\d}[1]{\,d#1}
+      \def\dx{\d{x}}
+      \def\dy{\d{y}}
+      \def\dfx{\d{F_X(x)}}
+      \def\dfy{\d{F_Y(y)}}
+      
+      % Transcendentals
+      \newcommand{\Exp}[1]{\exp\left\{#1\right\}}
+      
+      % Random variables
+      \def\iid{\textsc{iid}}
+      \def\ind{\perp\!\!\!\perp}
+      \def\giv{\,|\,}
+      
+      % Probability, expectation, and variance
+      \def\prob{\mathbb{P}}
+      \renewcommand{\Pr}[2][]{\prob_{#1}\left[#2\right]}
+      \newcommand{\E}[2][]{\mathbb{E}_{#1}\left[#2\right]}
+      \newcommand{\V}[2][]{\mathbb{V}_{#1}\left[#2\right]}
+      \newcommand{\cov}[2][]{\mathrm{Cov}_{#1}\left[#2\right]}
+      \def\samplemean{\bar{X}_n}
+      \def\samplevar{S^2}
+      
+      % Standard transformation function
+      \def\transform{\varphi}
     </macros>
     <latex-image-preamble>
       \usepackage{tikz}
       \usepackage{amsmath,amssymb}
+      \usepackage{dsfont}
     </latex-image-preamble>
     <brandlogo url="http://statistics.zone" source="" />
   </docinfo>
