@@ -94,7 +94,7 @@
               <cell><m>\frac{I(a\le x\le b)}{b-a+1}</m></cell>
               <cell><m>\frac{a+b}{2}</m></cell>
               <cell><m>\frac{(b-a+1)^2-1}{12}</m></cell>
-              <cell><m>\frac{e^{as}-e^{-(b+1)s}}{s(b-a)}</m></cell>
+              <cell><m>\frac{e^{as}(1-e^{(b-a+1)s})}{(b-a+1)(1-e^s)}</m></cell>
             </row>
             
             <row>
@@ -273,7 +273,7 @@
               <cell>F</cell>
               <cell><m>\text{F}(d_1,d_2)</m></cell>
               <cell><m>I_\frac{d_1x}{d_1x+d_2}\left(\frac{d_1}{2},\frac{d_2}{2}\right)</m></cell>
-              <cell><m>\frac{\sqrt{\frac{(d_1x)^{d_1} d_2^{d_2}}{(d_1x+d_2)^{d_1+d_2}}}}{x\mathrm{B}\left(\frac{d_1}{2},\frac{d_1}{2}\right)}</m></cell>
+              <cell><m>\frac{\sqrt{\frac{(d_1x)^{d_1} d_2^{d_2}}{(d_1x+d_2)^{d_1+d_2}}}}{x\mathrm{B}\left(\frac{d_1}{2},\frac{d_2}{2}\right)}</m></cell>
               <cell><m>\frac{d_2}{d_2-2}</m></cell>
               <cell><m>\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)}</m></cell>
               <cell></cell>
